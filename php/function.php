@@ -1,7 +1,7 @@
 <?php 
 @session_start();
 
-// 取得已發布文章 用於 article list.php
+// 取得已發布文章(文章概覽) 用於 article list.php
 function get_publish_article()
 {
     $datas = array();
@@ -25,7 +25,7 @@ function get_publish_article()
     return $datas;
 }
 
-// 取得被點擊的此文章 用於article.php
+// 取得被點擊的此文章(進入被點擊的文章) 用於article.php
 function get_article($id)
 {
     $result = null;

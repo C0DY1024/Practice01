@@ -1,6 +1,6 @@
 <?php
-require_once 'db.php';
-require_once 'function.php';
+require_once 'php/db.php';
+require_once 'php/function.php';
 $datas = get_publish_article();
 ?>
 
@@ -16,10 +16,10 @@ $datas = get_publish_article();
     <meta name="description" content="公司網站">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <<?php include_once 'menu.php'; ?>
+    <?php include_once 'php/menu.php'; ?>
 
     <div class="main">
         <div class="container">
@@ -52,15 +52,7 @@ $datas = get_publish_article();
         </div>
     </div>
 
-    <div class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                       <p class="text-center"> &copy; <?php echo date("Y");?> XX公司版權所有</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php include_once 'php/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
