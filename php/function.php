@@ -48,4 +48,48 @@ function get_article($id)
 }
 
 
+function get_publish_works()
+{
+    $datas = array();
+    $sql ="SELECT * FROM `works` WHERE `publish` = 1";
+    $query = mysqli_query($_SESSION['link'], $sql);
+    if($query)
+    {
+        // 執行成功
+        if(mysqli_num_rows($query)>0)
+        {
+            while ($row = mysqli_fetch_assoc($query)){
+                $datas[]=$row;
+            }
+        }
+    }
+    else
+    {
+        // 執行失敗
+        echo "{$sql}語法請求失敗:<br/>". mysqli_error($_SEESION['link']);
+    }
+    return $datas;
+}
+
+function get_work($id)
+{
+    $result = null;
+    $sql ="SELECT * FROM `works` WHERE `publish` = 1 AND `id` ={$id}";
+    $query = mysqli_query($_SESSION['link'], $sql);
+    if($query)
+    {
+        // 執行成功
+        if(mysqli_num_rows($query)==1)
+        {
+            $result = mysqli_fetch_assoc($query);
+        }
+    }
+    else
+    {
+        // 執行失敗
+        echo "{$sql}語法請求失敗:<br/>". mysqli_error($_SEESION['link']);
+    }
+    return $result;
+}
+
 ?>
