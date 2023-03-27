@@ -29,15 +29,14 @@ $title= mb_substr($title,0,11,"UTF-8")."...";
             <div class="row">
                 <div class="col-xs-12">
                                     <?php if($work['image_path']):?>
-                                        <img src="<?php echo $work['image_path']; ?>".class="card-img-top">
+                                        <img src="<?php echo $work['image_path']; ?>" class="img-fluid">
                                     <?php else:?>
                                         <div>
-                                            <video src="<?php echo $work['video_path']; ?>".class="card-img-top" controls></video>
+                                            <video src="<?php echo $work['video_path']; ?>" class="img-fluid" controls></video>
                                         </div>
                                     <?php endif;?>
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $work['intro'];?></h5>
-                                        <a href="work.php?i=<?php echo $work['id']; ?>" class="btn btn-primary">查看</a>
                                     </div>
                 </div>
             </div>
@@ -46,7 +45,5 @@ $title= mb_substr($title,0,11,"UTF-8")."...";
 
     <?php include_once 'php/footer.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
 </html>

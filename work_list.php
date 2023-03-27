@@ -28,13 +28,14 @@ $datas = get_publish_works();
                     <?php if(!empty($datas)):?>
                         <?php foreach($datas as $works):?>
                             <div class="col-xs-12 col-sm-4">
-                                <div class="card" style="width: 18rem;">
+                                <div class="card" style="width: 100%;">
                                     <?php if($works['image_path']):?>
-                                        <img src="<?php echo $works['image_path']; ?>".class="card-img-top">
+                                        <img src="<?php echo $works['image_path']; ?>" class="card-img-top" style="height: 12rem;">
                                     <?php else:?>
-                                        <video src="<?php echo $works['video_path']; ?>".class="card-img-top" controls></video>
+                                        <video src="<?php echo $works['video_path']; ?>"  class="card-img-top" style="height: 12rem;" controls></video>
 
                                     <?php endif;?>
+
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $works['intro'];?></h5>
                                         <a href="work.php?i=<?php echo $works['id']; ?>" class="btn btn-primary">查看</a>
@@ -53,7 +54,5 @@ $datas = get_publish_works();
 
     <?php include_once 'php/footer.php'; ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
 </html>

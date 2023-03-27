@@ -1,14 +1,24 @@
-.top{
-    font-weight:bold;
+.top {
+    font-weight: bold;
 }
-.jumbotron{
+
+.jumbotron {
     background-color: rgb(210, 210, 210);
-    padding:2.5%;
+    padding: 2.5%;
     margin-bottom: 20px;
 }
-.main{
+
+.main {
     min-height: 450px;
 }
-.border-primary .card-header a{
+
+.border-primary .card-header a {
     color: aliceblue;
+}
+
+
+@media screen and (min-width: 575px) {
+    .col-form-label {
+        text-align: right;
+    }
 }
