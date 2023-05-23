@@ -16,6 +16,57 @@
     color: aliceblue;
 }
 
+.footer {
+    margin-top: 8%;
+}
+
+.login_h1 {
+    font-size: 40px;
+    text-align: center;
+    margin: 5%;
+}
+
+.btn_login_un {
+    margin: 5%;
+}
+
+
+.btn_login_pw {
+    margin: 10% 20px 5% 20px;
+}
+
+.form-control {
+    margin-top: 10px;
+}
+
+.modal-header .btn-close {
+    position: absolute;
+    right: 20px;
+}
+
+.modal-title {
+    font-size: 35px;
+    margin: auto;
+}
+
+.modal-footer {
+    text-align: center;
+    justify-content: center;
+}
+
+.add_btn_area {
+    padding: 25px 0;
+}
+
+.table th {
+    background-color: black;
+    color: aliceblue;
+}
+
+.add_article_btn .btn-secondary {
+    margin-top: 10px;
+}
+
 
 @media screen and (min-width: 575px) {
     .col-form-label {
