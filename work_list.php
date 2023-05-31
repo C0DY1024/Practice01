@@ -29,10 +29,10 @@ $datas = get_publish_works();
                         <?php foreach($datas as $works):?>
                             <div class="col-xs-12 col-sm-4">
                                 <div class="card" style="width: 100%;">
-                                    <?php if($works['image_path']):?>
-                                        <img src="<?php echo $works['image_path']; ?>" class="card-img-top" style="height: 12rem;">
+                                    <?php if($works['category']=="圖片"):?>
+                                        <img src="<?php echo $works['save_path']; ?>" class="card-img-top" style="height: 12rem;">
                                     <?php else:?>
-                                        <video src="<?php echo $works['video_path']; ?>"  class="card-img-top" style="height: 12rem;" controls></video>
+                                        <video src="<?php echo $works['save_path']; ?>"  class="card-img-top" style="height: 12rem;" controls></video>
 
                                     <?php endif;?>
 

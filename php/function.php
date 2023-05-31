@@ -280,6 +280,33 @@ function del_article($id)
     return $result;
 }
 
+function del_work($id)
+{
+    $result = null;
+
+    $work = get_edit_work($id);
+    if(file_exists('../'.$work['save_path'])){
+        unlink('../'.$work['save_path']);
+    }
+
+    $sql = "DELETE FROM `works` WHERE `id`=$id";
+
+    $query = mysqli_query($_SESSION['link'], $sql);
+    if($query)
+    {
+        
+        if(mysqli_affected_rows($_SESSION['link'])==1)
+        {
+            $result = true;
+        }
+    }
+    else
+    {
+        echo "{$sql}語法請求失敗:<br/>". mysqli_error($_SEESION['link']);
+    }
+    return $result;
+}
+
 function get_all_member()
 {
     $datas = array();
@@ -377,4 +404,138 @@ function update_user($id,$username,$password,$name)
     return $result;
 }
 
+function get_all_works()
+{
+    $datas = array();
+    $sql ="SELECT * FROM `works`";
+    $query = mysqli_query($_SESSION['link'], $sql);
+    if($query)
+    {
+        
+        if(mysqli_num_rows($query)>0)
+        {
+            while ($row = mysqli_fetch_assoc($query)){
+                $datas[]=$row;
+            }
+        }
+    }
+    else
+    {
+        
+        echo "{$sql}語法請求失敗:<br/>". mysqli_error($_SEESION['link']);
+    }
+    return $datas;
+}
+
+function add_work($intro, $category, $save_path, $publish)
+{
+    $result = null;
+
+	$intro = htmlspecialchars($intro);
+	$create_user_id = $_SESSION['login_user_id'];
+	$upload_date = date("Y-m-d H:i:s");
+
+
+    $sql = "INSERT INTO `works` (`intro`, `category`,`save_path`, `publish`, `upload_date`, `create_user_id`)
+                    VALUE ('{$intro}','{$category}','{$save_path}', {$publish}, '{$upload_date}', '{$create_user_id}');";
+
+    $query = mysqli_query($_SESSION['link'], $sql);
+    
+    if ($query)
+    {
+        
+        if(mysqli_affected_rows($_SESSION['link']) == 1)
+        {
+        
+        $result = true;
+        }
+    }
+    else
+    {
+        echo "{$sql} 語法執行失敗，錯誤訊息：" . mysqli_error($_SESSION['link']);
+    }
+    return $result;
+    }
+
+function get_edit_work($id)
+{
+    $result = null;
+    $sql ="SELECT * FROM `works` WHERE `id` ={$id}";
+    $query = mysqli_query($_SESSION['link'], $sql);
+    if($query)
+    {
+        
+        if(mysqli_num_rows($query)==1)
+        {
+            $result = mysqli_fetch_assoc($query);
+        }
+    }
+    else
+    {
+        
+        echo "{$sql}語法請求失敗:<br/>". mysqli_error($_SEESION['link']);
+    }
+    return $result;
+}
+
+function update_work($id,$intro,$category,$publish,$save_path)
+{
+    $result = null;
+
+    $work = get_edit_work($id);
+    if(file_exists('../'.$work['save_path'])){
+        if($save_path != $work['save_path']){
+            unlink('../'.$work['save_path']);
+            }
+        }
+        $sql = "UPDATE `works`
+                SET `intro`='{$intro}',
+                `category`='{$category}', 
+                `publish`= $publish,
+                `save_path`='{$save_path}'
+                WHERE `id`=$id";
+
+    $query = mysqli_query($_SESSION['link'], $sql);
+    if($query)
+    {
+        
+        if(mysqli_affected_rows($_SESSION['link'])==1)
+        {
+            $result = true;
+        }
+    }
+    else
+    {
+        echo "{$sql}語法請求失敗:<br/>". mysqli_error($_SEESION['link']);
+    }
+    return $result;
+}
+
+function update_info($id,$intro,$category,$publish,$save_path)
+{
+    $result = null;
+    
+
+    $sql = "UPDATE `works`
+            SET `intro`='{$intro}',
+             `category`='{$category}', 
+             `publish`= $publish,
+             `save_path`='{$save_path}'
+             WHERE `id`=$id";
+
+    $query = mysqli_query($_SESSION['link'], $sql);
+    if($query)
+    {
+        
+        if(mysqli_affected_rows($_SESSION['link'])==1)
+        {
+            $result = true;
+        }
+    }
+    else
+    {
+        echo "{$sql}語法請求失敗:<br/>". mysqli_error($_SEESION['link']);
+    }
+    return $result;
+}
 ?>

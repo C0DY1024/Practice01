@@ -67,6 +67,18 @@
     margin-top: 10px;
 }
 
+.preview_video {
+    display: none;
+    max-width: 350px;
+    max-height: 350px;
+}
+
+.preview_img {
+    display: none;
+    max-width: 350px;
+    max-height: 350px;
+}
+
 
 @media screen and (min-width: 575px) {
     .col-form-label {
