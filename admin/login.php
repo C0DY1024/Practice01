@@ -25,7 +25,7 @@ if(isset($_SESSION['is_login']) && $_SESSION['is_login']){
                 <div class="col-12 offset-sm-0">
                     <div class="login_h1">會員登入</div>
                 <form id="login_form" method="post" action="../php/verify_user.php">
-                <!-- 帳號 -->
+                
                     <div class="row mb-4 justify-content-center">
                         <label for="username" class="col-sm-2 col-form-label">帳號</label>
 
@@ -33,7 +33,7 @@ if(isset($_SESSION['is_login']) && $_SESSION['is_login']){
                             <input type="text" name="username" id="username" class="form-control" placeholder="請輸入您的帳號" aria-describedby="usernameHelpInline"required>
                         </div>
                     </div>
-                <!-- 密碼 -->
+              
                     <div class="row mb-4 justify-content-center">
                         <label for="password" class="col-sm-2 col-form-label">密碼</label>
             

@@ -18,7 +18,7 @@
             <div class="row">
                 <div class="col-12 offset-sm-0">
                 <form id="register_form" method="post" action="php/add_member.php">
-                <!-- 帳號 -->
+                
                     <div class="row mb-4 justify-content-center">
                         <label for="username" class="col-sm-2 col-form-label">帳號</label>
 
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                     </div>
-                <!-- 密碼 -->
+                
                     <div class="row mb-4 justify-content-center">
                         <label for="password" class="col-sm-2 col-form-label">密碼</label>
             
@@ -40,7 +40,7 @@
                             <input type="password" name="password" id="password" class="form-control" placeholder="請輸入您的密碼" aria-describedby="passwordHelpInline" required>
                         </div>
                     </div>
-                <!-- 確認密碼 -->
+                
                     <div class="row mb-4 justify-content-center">
                         <label for="confirm_password" class="col-sm-2 col-form-label">確認密碼</label>
 
@@ -48,7 +48,7 @@
                             <input type="password" id="confirm_password" class="form-control" placeholder="再次輸入您的密碼" aria-describedby="passwordHelpInline"required>
                         </div>
                     </div>
-                <!-- 暱稱 -->
+                
                     <div class="row mb-4 justify-content-center">
                             <label for="name" class="col-sm-2 col-form-label">暱稱</label>
 

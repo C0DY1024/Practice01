@@ -108,7 +108,6 @@ $mime = mime_content_type($filePath);
 
             
         if (fileSelected) {
-            // $(upload_file).trigger("change"); 
             file_data.append("file", upload_file.files[0]);
             if (file_type == "video/mp4") {
                 save_path = "files/videos/" + upload_file.files[0]['name'];
@@ -146,7 +145,6 @@ $mime = mime_content_type($filePath);
                         }
 
                     }).fail(function(data) {
-                        //失敗的時候
                         alert("有錯誤產生，請看 console log");
                         console.log(jqXHR.responseText);
                     });
@@ -188,7 +186,6 @@ $mime = mime_content_type($filePath);
                 }
 
             }).fail(function(data) {
-                //失敗的時候
                 alert("有錯誤產生，請看 console log");
                 console.log(jqXHR.responseText);
             });

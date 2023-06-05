@@ -68,14 +68,14 @@ $file_name = basename($_SERVER['PHP_SELF'], ".php");
 
             <div class="modal-body">
                 <form id="login_form" method="post" action="php/verify_user.php">
-                <!-- 帳號 -->
+                
                     <div class="btn_login_un">
                         <label for="username">帳號</label>
                         <div>
                             <input type="text" name="login_username" id="login_username" class="form-control" placeholder="請輸入您的帳號" aria-describedby="usernameHelpInline"required>
                         </div>
                     </div>
-                <!-- 密碼 -->
+               
                     <div class="btn_login_pw">
                         <label for="password">密碼</label>
                         <div>

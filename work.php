@@ -28,11 +28,11 @@ $title= mb_substr($title,0,11,"UTF-8")."...";
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                                    <?php if($work['image_path']):?>
-                                        <img src="<?php echo $work['image_path']; ?>" class="img-fluid">
+                                    <?php if($work['category']=="圖片"):?>
+                                        <img src="<?php echo $work['save_path']; ?>" class="img-fluid">
                                     <?php else:?>
                                         <div>
-                                            <video src="<?php echo $work['video_path']; ?>" class="img-fluid" controls></video>
+                                            <video src="<?php echo $work['save_path']; ?>" class="img-fluid" controls></video>
                                         </div>
                                     <?php endif;?>
                                     <div class="card-body">

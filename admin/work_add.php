@@ -48,8 +48,6 @@ if(!isset($_SESSION['is_login']) || !$_SESSION['is_login']){
 
                         <div class="mb-3">
                             <input accept="image/gif, image/jpeg, image/png, video/mp4" type='file' id="upload_file" name='upload_file'/>
-                            <input type="hidden" id="image_path" value="">
-                            <input type="hidden" id="video_path" value="">
                             <div><img class="preview_img" id="preview_img" src="../files/images/圖片預覽.png" /></div>
                             <div><video class="preview_video" id="preview_video"src="" controls> </div>
                         </div>
@@ -130,7 +128,6 @@ if(!isset($_SESSION['is_login']) || !$_SESSION['is_login']){
                         }
 
                     }).fail(function(data) {
-                        //失敗的時候
                         alert("有錯誤產生，請看 console log");
                         console.log(jqXHR.responseText);
                     });
